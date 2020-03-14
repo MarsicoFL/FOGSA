@@ -5,10 +5,7 @@ library(dplyr)
 library(plotly)
 library(crosstalk)
 library(tidyverse)
-
-options(shiny.host = '192.168.148.172')
-options(shiny.port = 8080)
-
+library(viridis)
 
 ui <- dashboardPage(skin = "purple",
   dashboardHeader(title = "FOGSA"),
@@ -25,10 +22,7 @@ ui <- dashboardPage(skin = "purple",
                   menuItem("LRdt", tabName = "LRdt", icon = icon("eye")),
                   sliderInput("LR", "LR thershold:",
                               min = 1, max = 500,
-                              value = 1, step = 1,
-                              animate =
-                                animationOptions(interval = 10, loop = TRUE))
-  )
+                              value = 1, step = 1))
   ),
     dashboardBody(
       tabItems(
@@ -37,7 +31,7 @@ ui <- dashboardPage(skin = "purple",
                 h2("FOrensic Genetics Simulation Analysis", align= "Center"),
         ),
         
-       # second tab content
+      # second tab content
         tabItem(tabName = "Inputs",
                 h2("Uploading data"),
                 fluidRow(
@@ -67,7 +61,8 @@ ui <- dashboardPage(skin = "purple",
                  h3("Unrelated"),
                  verbatimTextOutput("SumX1"),
                  h3("Related"),
-                 verbatimTextOutput("SumX2")
+                 verbatimTextOutput("SumX2"),
+                 plotOutput("boxplot1")
                )),
        # five tab content
        tabItem(tabName = "PowerPlot",
@@ -94,8 +89,47 @@ server <- function(input, output) {
     if (is.null(inFile))
       return(NULL)
     
-    read.delim(inFile$datapath, col.names = c("Unrelated", "Related"), header = FALSE, skip = 2, sep = "\t")
+    read.delim(inFile$datapath, col.names = c("X1-Unrelated", "X2-Related"), header = FALSE, skip = 2, sep = "\t")
   })
+  
+  ##### Obtaining boxplot 
+  output$boxplot1 <- renderPlot({
+    inFile <- input$file1
+    
+    if (is.null(inFile))
+      return(NULL)
+    
+    data1 <- read_delim(inFile$datapath, "\t", 
+                        escape_backslash = TRUE, escape_double = FALSE, 
+                        col_names = FALSE, locale = locale(decimal_mark = ",", 
+                                                           grouping_mark = ""), trim_ws = TRUE, 
+                        skip = 2)
+  
+    
+    data2 <- log10(data1)
+    attach(data2)
+
+    A <- gather(data2)
+    
+    colnames(A) <- c("type","LR")
+    attach(A)
+    
+    #boxplot(log10(data2), horizontal = TRUE)
+    # Violin basic
+    A %>%
+      ggplot(aes(x= A$type, y = A$LR)) +
+      geom_violin() +
+      scale_fill_viridis(discrete = TRUE, alpha=0.6, option="A") +
+      theme(
+        legend.position="none",
+        plot.title = element_text(size=13)
+      ) +
+      ggtitle("Violin chart of LR distribution") +
+      ylab("Log10(LR)") +
+      xlab("") +
+      coord_flip()
+  })
+  
   ##### Obtaining LR distribution graph
   output$LRdistributions <- renderPlot({
     inFile <- input$file1
