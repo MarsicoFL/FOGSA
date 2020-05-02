@@ -29,10 +29,10 @@ ui <- dashboardPage(skin = "purple",
       # second tab content
         tabItem(tabName = "Inputs",
                 h2("FOrensic Genetics Simulation Analysis", align= "Center"),
-                HTML("<h5>Purpose: Despite that the use of DNA in Missing Person Identification and Disaster Victim Identification cases has gained increasing focus during the last two decades, there still are several complications that the forensic scientists are faced with, for instance complex family structures and large scale comparisons are examples. Evaluating the impact of these complications in the identification process is one of the main tasks of the forensic genetics statistics. The development of algorithms and the application of statistical analysis in order to measure the uncertainty and minimize the probability of both false positive and false negatives types of error can be crucial to the purpose of the Missing Person Identification. FOGSA (Forensic Genetics Simulation Analysis) provides an userfriendly interface that allows the analysis of the simulation Raw Data from different softwares such as Familias R version and Forrel Package. FOGSA aimed at helping in the statistical analysis for decision making in forensic genetic caseworks. For any question feel free to contact the developer, Franco Marsico (franco.lmarsico@gmail.com).<h5>"),
+                HTML("<h5>Purpose: Despite that the use of DNA in Missing Person Identification and Disaster Victim Identification cases has gained increasing focus during the last two decades, there still are several complications that the forensic scientists are faced with, for instance complex family structures and large scale comparisons are examples. Evaluating the impact of these complications in the identification process is one of the main tasks of the forensic genetics statistics. The development of algorithms and the application of statistical analysis in order to measure the uncertainty and minimize the probability of both false positive and false negatives types of error can be crucial to the purpose of the Missing Person Identification. FOGSA (Forensic Genetics Simulation Analysis) provides an userfriendly interface that allows the analysis of the simulation Raw Data from different softwares such as Familias R version and Forrel Package. FOGSA aimed at helping in the statistical analysis for decision making in forensic genetic caseworks.<h5>"),
                 h3("Start uploading your simulation Raw Data"),
                 fluidRow(
-                  fileInput("file1", "Simulation output",
+                  fileInput("file1", "Familias simulation output",
                             accept = c(
                               "text/csv",
                               "text/comma-separated-values,text/plain",
@@ -206,8 +206,8 @@ server <- function(input, output) {
     
     plot(PI, PE, 
          type = "p",
-         xlab= "Power of Inclution", 
-         ylab= "Power of Exclution", 
+         xlab= "Inclusion Power", 
+         ylab= "Exclusion Power", 
          col=2,
          pch = 19,
          lwd=2, 
@@ -272,10 +272,10 @@ server <- function(input, output) {
       MCC<-(TP*TN-FP*FN)/(sqrt(TP+FP)*sqrt(TP+FN)*sqrt(TN+FP)*sqrt(TN+FN))
       
       data.frame(
-        Parameter = c("False Positives Rates",
-                      "False Negatives Rates",
-                      "True Positives Rates",
-                      "True Negatives Rates",
+        Parameter = c("False Positive Rate",
+                      "False Negative Rate",
+                      "True Positive Rate",
+                      "True Negative Rate",
                       "Accuracy",
                       "Matthews Coef."
         ),
