@@ -38,7 +38,7 @@ Exclution Power (EP): The probability of obtaining a likelihood ratio upper than
 The Power Plot could be perfomed combining this two measures. A family group with low PI and PE has low statistical power where a high probability of false positives and false negatives could be expected. In this cases more genetic information must be incorporated to the pedigree. It could be done by the incorporation of more genetic markers or more members. As counterpart, a pedigree with high IP and EP allows performing an identification with an accurate result.
 For example, for Family B we obtain the next powerplot:
 
-![Screenshot](img/ExampleB.png)
+![Screenshot](img/PowerPlot.png)
 
 The Family B have very low statistical power. This result could be interpreted with the distribution of Likelihood Ratios obtained as it is shown below:
 
