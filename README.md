@@ -54,7 +54,7 @@ The LR decision threshold could be selected taking into consideration:
 - Database size and resources for the re-analysis of the expected number of false positives (false positive rate * database size).
 - The behavior of the LRdt plot. It indicates that, in some cases, increasing the LRdt value results in a high reduction of false positive rate whilst the false negative rate has a small increase.
 
-Below the obtained plot for Family B is shown. The X axis correspond to the False Negative Rate and Y axis to False Positive Rate.
+Below the obtained plot for Family B is shown. The X axis correspond to the False Negative Rate and Y axis to False Positive Rate. Each point represent a LR value from 1 to 10000.
 
 ![Screenshot](img/LRdtPlot.png)
 
