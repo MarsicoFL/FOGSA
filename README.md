@@ -33,9 +33,9 @@ Once FOGSA is ran, the first step is uploading the output file from simulations 
 
 ### Power plot
 For a given pedigree the statistical power of the DNA-based identification could be calculated from the simulated data. Two measures could help in order to characterize a family group:
-Inclution Power (IP): It is the probability of obtaining a likelihood ratio of zero when the tested person (POI) is not related with the family group.
-Exclution Power (EP): The probability of obtaining a likelihood ratio upper than 10000 when the tested person (POI) is actually the missing person (MP).
-The Power Plot could be perfomed combining this two measures. A family group with low PI and PE has low statistical power where a high probability of false positives and false negatives could be expected. In this cases more genetic information must be incorporated to the pedigree. It could be done by the incorporation of more genetic markers or more members. As counterpart, a pedigree with high IP and EP allows performing an identification with an accurate result.
+Inclusion Power (IP): It is the probability of obtaining a likelihood ratio of zero when the tested person (POI) is not related with the family group.
+Exclusion Power (EP): The probability of obtaining a likelihood ratio upper than 10000 when the tested person (POI) is actually the missing person (MP).
+The Power Plot could be perfomed combining this two measures. A family group with low IP and EP has low statistical power where a high probability of false positives and false negatives could be expected. In this cases more genetic information must be incorporated to the pedigree. It could be done by the incorporation of more genetic markers or more members. As counterpart, a pedigree with high IP and EP allows performing an identification with an accurate result.
 For example, for Family B we obtain the next powerplot:
 
 ![Screenshot](img/PowerPlot.png)
