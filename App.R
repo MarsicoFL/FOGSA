@@ -206,8 +206,8 @@ server <- function(input, output) {
     
     plot(PI, PE, 
          type = "p",
-         xlab= "Power of Inclution", 
-         ylab= "Power of Exclution", 
+         xlab= "Inclusion Power", 
+         ylab= "Exclusion Power", 
          col=2,
          pch = 19,
          lwd=2, 
@@ -272,10 +272,10 @@ server <- function(input, output) {
       MCC<-(TP*TN-FP*FN)/(sqrt(TP+FP)*sqrt(TP+FN)*sqrt(TN+FP)*sqrt(TN+FN))
       
       data.frame(
-        Parameter = c("False Positives Rates",
-                      "False Negatives Rates",
-                      "True Positives Rates",
-                      "True Negatives Rates",
+        Parameter = c("False Positive Rate",
+                      "False Negative Rate",
+                      "True Positive Rate",
+                      "True Negative Rate",
                       "Accuracy",
                       "Matthews Coef."
         ),
