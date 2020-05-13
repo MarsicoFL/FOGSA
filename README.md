@@ -49,7 +49,7 @@ For example, for Family B we obtain the next powerplot:
 ### Rates calculation in function of LR threshold selected
 False positive and false negative rates could be estimated for each Likelihood ratio selected as threshold (please select one using the sliderbar). Taking into account this measures, Matthews Correlation Coefficient and Acuracy can be calculated. Both measures gives an idea about how accurate is the LR threshold selected. If you are working with massive comparisons in genetic databases the expected number of false positives could be approximated multiplying the false positive rate by the database size. Two different measures of accuracy are incorportad (Accuracy and Matthews Correlation Coefficient) that should be interpretated with caution, it doesn´t tell how accurate is the identification with the obtained LR, it only indicates how accurate is the clasification system based in the selected Likelihood Ratio threshold in a database searching context. Below we can see the obtained values for Family B considering a Likelihood Ratio Threshold of 1.
 
-![Screenshot](img/Rates.png)
+![Screenshot](img/Rates2.png)
 
 
 ### Likelihood Ratio Decision Threshold
