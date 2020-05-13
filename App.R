@@ -71,7 +71,7 @@ ui <- dashboardPage(skin = "purple",
                HTML("<h5> False positive and false negative rates could be estimated for each Likelihood ratio selected as threshold (please select one using the sliderbar). Taking into account this measures, Matthews Correlation Coefficient and Acuracy can be calculated. Both measures gives an idea about how accurate is the LR threshold selected. If you are working with massive comparisons in genetic databases the expected number of false positives could be approximated multiplying the false positive rate by the database size.<br/><br/><h5>"),
                tableOutput("Rates"),
                # Copy the line below to make a number input box into the UI.
-               numericInput("num", label = h3("Numeric input"), value = 1),
+               numericInput("num", label = h4("Please select the Likelihood Ratio Threshold:"), value = 1),
                hr(),
                fluidRow(column(3, verbatimTextOutput("LR threshold value")))),
        # seven tab content
