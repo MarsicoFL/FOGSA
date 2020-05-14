@@ -29,7 +29,7 @@ So what we ask here is if we have enough statistical power to perform an identif
 ![Screenshot](img/ExampleB.png)
 
 ### How much simulations are enough?
-Particularly, in the examples present in the documentation 10,000 conditional Monte Carlo simulation were done using the software Familias (R version). The number appropiate number of simulations depends on the accuracy that we expect. In some cases, when we want to analyze low frequency event rates another aprroach should be taken (for example important sampling, for details see Kruijver et al, FSI gen, 2014; Slooten et al, International Journal of Legal Medicine, 2016)
+Particularly, in the examples present in the documentation 10,000 conditional Monte Carlo simulation were done using the software Familias (R version). The appropiate number of simulations depends on the accuracy that we expect. In some cases, when we want to analyze low frequency events another aprroach should be taken, for example important sampling (for details see Kruijver et al, FSI gen, 2014; Slooten et al, International Journal of Legal Medicine, 2016).
 
 ### Input files for FOGSA
 Once FOGSA is ran, the first step is uploading the output file from simulations previously generated. It should consist in two columns, one with the Likelihood ratios obtained under one hypothesis of pedigree and the other with those obtained under another hypothesis to be compared. For this tutorial we use the data from the example B located in the directory where FOGSA-master was downloaded in the folder examples_data with the name ExampleB.csv (for example /home/user/downloads/FOGSA-master/examples_data/ExampleB.csv).
