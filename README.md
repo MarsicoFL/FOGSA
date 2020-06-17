@@ -3,22 +3,12 @@
 ## Description
 Despite that the use of DNA in Missing Person Identification and Disaster Victim Identification cases has gained increasing focus during the last two decades, there still are several complications that the forensic scientists are faced with, for instance complex family structures and large scale comparisons are examples. Evaluating the impact of these complications in the identification process is one of the main tasks of the forensic genetics statistics. The development of algorithms and the application of statistical analysis in order to measure the uncertainty and minimize the probability of both false positive and false negatives types of error can be crucial to the purpose of the Missing Person Identification. FOGSA (Forensic Genetics Simulation Analysis) provides an userfriendly interface that allows the analysis of the simulation Raw Data from different softwares such as Familias R version and Forrel Package. FOGSA aimed at helping in the statistical analysis for decision making in forensic genetic caseworks.
 
-## Installation
-Please, download and unzip FOGSA-master.zip package. Once done, execute the App.R script with Rstudio and follow the instructions below.
-
-### Installing pre-required packages
-Some packages are required in order to execute FOGSA. Below the command lines for installing each package are shown:
+## Installation and execution
+You can easily locally run FOGSA opening Rstudio an executing the following commands:
 ```{r, eval = FALSE}
-install.packages("shiny")
-install.packages("shinydashboard")
-install.packages("dplyr")
-install.packages("plotly")
-install.packages("crosstalk")
-install.packages("tidyverse")
-install.packages("viridis")
+library(shiny)
+shiny::runGitHub(repo = "MarsicoFL/FOGSA")
 ```
-
-With this correctly done, we are able to run FOGSA app.
 
 ## Usage
 ### Generating simulation data with other softwares
