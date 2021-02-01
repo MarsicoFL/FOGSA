@@ -2,10 +2,10 @@ Package: FOGSA
 Title: Forensic Genetics Simulation Analysis
 Version: 0.0.0.9000
 Authors@R: 
-    person(given = "Franco",
-           family = "Marsico",
-           role = c("aut", "cre"),
-           email = "franco.lmarsico@gmail.com")
+    person("Franco", "Marsico", email = "franco.lmarsico@gmail.com",
+           role = c("aut", "cre"))
+Author: Franco Marsico [aut, cre]
+Maintainer: Franco Marsico <franco.lmarsico@gmail.com>
 Description: FOGSA provides anayltical tool for decision making in large scale missing person identification cases.
 License: MIT + file LICENSE
 Encoding: UTF-8
